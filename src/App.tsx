@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import Blog from './Blog';
-import ProTip from '@/ProTip';
+import ProTip from 'ProTip';
 import { Button } from 'antd';
 
 function Copyright() {

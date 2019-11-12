@@ -275,6 +275,7 @@ export default function Blog() {
               </Typography>
               <Divider />
               {posts.map((post, i) => {
+                console.log('post: ', post);
                 return (
                   <Markdown className={classes.markdown} key={i}>
                     {post}

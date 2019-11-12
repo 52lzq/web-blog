@@ -11,6 +11,8 @@ declare namespace NodeJS {
 
 declare module '*.md';
 
+declare module 'markdown-to-jsx';
+
 declare module '*.bmp' {
   const src: string;
   export default src;

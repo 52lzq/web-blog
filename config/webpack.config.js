@@ -29,6 +29,8 @@ const eslint = require('eslint');
 // 添加tsconfig-paths-webpack-plugin
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
+const markdownRenderer = require('react-markdown-reader').renderer;
+
 const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
@@ -496,6 +498,21 @@ module.exports = function(webpackEnv) {
                 },
                 'sass-loader'
               )
+            },
+            {
+              test: /\.md$/,
+              use: [
+                {
+                  loader: 'html-loader'
+                },
+                {
+                  loader: 'markdown-loader',
+                  options: {
+                    pedantic: true,
+                    renderer: markdownRenderer(/**languages:Array<string>**/)
+                  }
+                }
+              ]
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.

@@ -33,7 +33,6 @@ const options = {
     li: {
       component: withStyles(styles)((props: { classes: any }) => {
         const { classes } = props;
-        console.log(2332);
         return (
           <li className={classes.listItem}>
             <Typography component='span' {...props} />
